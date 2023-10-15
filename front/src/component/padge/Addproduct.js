@@ -116,7 +116,7 @@ function showinput(){
 }
 
 async function uploadphotos(e){
-  setimg((prev)=>([...prev,...e.target.files]))
+  setimg(( prev)=>([...prev,...e.target.files]))
   const imgasfil=e.target.files
   const data = new FormData()
   for(let i =0; i<imgasfil.length;i++){

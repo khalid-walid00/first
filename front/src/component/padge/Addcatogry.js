@@ -6,6 +6,7 @@ import { Axios } from "../Axios"
 import { Tokenuser, cat } from "../../Api/api"
 import Loading from "../Loading"
 import { Form } from "react-router-dom"
+import axios from "axios"
 export default function Dashboard() {
 
 const [title,settitle]=useState("")
@@ -21,7 +22,7 @@ form.append("title",title)
 form.append("image",image)
     try{
      
-        const x= await Axios.post(`${cat}/add`,form)
+        const x= await axios.post(`/add`,form)
         setloading(true)
         window.location.pathname="dashbord/categories"
   

@@ -12,7 +12,7 @@ const token = cookie.get("e-commerce")
 export default function Requir({allowrole}) {
 
    const allow =allowrole
-
+console.log(allow)
 
 
 const Navigate =useNavigate()
@@ -20,9 +20,9 @@ const Navigate =useNavigate()
     const [role, setrole] = useState("")
 
     useEffect(() => {
-       Axios.get(`${Tokenuser}`).then((data) =>( setuser(data.data),setrole(data.data.role)))
+       Axios.get(`${Tokenuser}`).then((data) =>(  setuser(data.data),setrole(data.data.role)))
         .catch(() => Navigate("/login", { replace: true }))
-    }, [])
+    }, [0])
     return token ? (
 
         user === "" ? (<Loading />) : allow.includes(role) ?(<Outlet />) :<Error403 allow={role} />

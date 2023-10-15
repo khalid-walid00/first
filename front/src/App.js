@@ -19,14 +19,14 @@ import Products from "./component/padge/Products"
 import Addproduct from "./component/padge/Addproduct"
 import Error404 from './component/padge/Error404';
 import Requirback from './component/padge/Requireback';
-import Test from "./testpadge/test"
+
 
 function App() {
   return (
 
     <div >
       <Routes>
-        <Route path='test' element={<Test/>}/>
+    
         <Route path='/*' element={<Error404 />}></Route>
         <Route element={<Requirback />}>
           <Route path="/login" element={<Login />} />

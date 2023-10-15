@@ -16,17 +16,6 @@ export default function Navbar(){
         Axios.get(`${Tokenuser}`)
         .then((data)=>(setname(data.data.name) ,setrole(data.data.role)))
     })
-async function Logout(){
-try{
-    const x = await Axios.get(`${Loogout}`)
-    cookie.remove("e-commerce")
-    window.location.pathname="login"
-    
-}catch(err){
-
-}
-}
-
     return( <> <div className="row shadow-sm bg-secondary-subtle z-3 position-sticky top-0">
     <div className="col-2 align-items-center">
         <div className="d-flex"><div className="fs-4 fw-bold text-uppercase me-3">
@@ -57,7 +46,7 @@ try{
                 <button className="btn btn-primary rounded-end-2">{name} {role === "2001"? <FontAwesomeIcon beat icon={faUser} style={{color: "#b7c313",}} />: role ==="1995"?<FontAwesomeIcon icon={faCrown} beat style={{color: "#c2bd1e",}} /> : role === ""? "": <FontAwesomeIcon beat icon={faFeather} style={{color: "#b1d115",}} />}</button>
                 
                 <ul className="dropdown-menu">
-                    <li className="dropdown-item" onClick={Logout}>Logout</li>
+                    <li className="dropdown-item">Logout</li>
                 </ul>
                 
                  </div>
